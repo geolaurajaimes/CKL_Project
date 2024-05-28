@@ -5,18 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kawartha Lakes Tree Assets</title>
     <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Century Gothic';
+            background-color: #FFFFFF;
+        }
         #viewDiv {
             height: 80%;
             width: 100%;
         }
     </style>
-        <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.28/"></script>
     <script>
-        require(["esri/config", "esri/Map", "esri/WebMap", "esri/views/MapView", "esri/widgets/ScaleBar", "esri/widgets/Legend"
-        ], function (esriConfig, Map, WebMap, MapView, ScaleBar, Legend) {
-
-            // parameter esriConfig for the API Key: https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey
+        require([
+            "esri/config", 
+            "esri/WebMap", 
+            "esri/views/MapView", 
+            "esri/widgets/ScaleBar", 
+            "esri/widgets/Legend"
+        ], function (esriConfig, WebMap, MapView, ScaleBar, Legend) {
             esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
 
             const webmap = new WebMap({
@@ -28,9 +39,8 @@
             const view = new MapView({
                 container: "viewDiv",
                 map: webmap,
-                zoom: 15 // Zoom level
+                zoom: 15
             });
-
 
             const scalebar = new ScaleBar({
                 view: view
@@ -41,17 +51,15 @@
                 view: view,
             });
             view.ui.add(legend, "bottom-right");
-
         });
-
     </script>
 </head>
-    
 <body>
-    <h1> Kawartha Lakes Tree Asset </h1>
-       <!-- viewDiv is the element displays the map -->
-        <div id="viewDiv"></div>
-        <p> Testing links </p>
+    <h1 style="text-align: center">Kawartha Lakes Tree Assets</h1>
+    <div id="viewDiv"></div>
+    <p style="text-align: center">Testing links</p>
+    <p style="text-align: center">
         <a href="https://survey123.arcgis.com/share/e5fdbce1a0874477b2ae0dee204168e5?portalUrl=https://Fleming.maps.arcgis.com" target="_blank">Make a Request!</a>
+    </p>
 </body>
 </html>
