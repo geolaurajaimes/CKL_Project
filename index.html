@@ -5,26 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kawartha Lakes Tree Assets</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        iframe {
-            width: 80%;
+        #viewDiv {
             height: 80%;
-            border: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
         }
     </style>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.28/"></script>
+    <script>
+        require(["esri/config", "esri/Map", "esri/WebMap", "esri/views/MapView", "esri/widgets/ScaleBar", "esri/widgets/Legend"
+        ], function (esriConfig, Map, WebMap, MapView, ScaleBar, Legend) {
+
+            // parameter esriConfig for the API Key: https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey
+            esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
+
+            const webmap = new WebMap({
+                portalItem: {
+                    id: "3f81264d1525430dba8210cdd9352668" 
+                }
+            });
+
+            const view = new MapView({
+                container: "viewDiv",
+                map: webmap,
+                zoom: 15 // Zoom level
+            });
+
+
+            const scalebar = new ScaleBar({
+                view: view
+            });
+            view.ui.add(scalebar, "bottom-left");
+
+            const legend = new Legend({
+                view: view,
+            });
+            view.ui.add(legend, "bottom-right");
+
+        });
+
+    </script>
 </head>
+    
 <body>
-  <h1> Kawartha Lakes Tree Asset </h1>
-    <p> Testing links </p>
-      <iframe src="https://tree-management-3-fleming.hub.arcgis.com/"></iframe>
+    <h1> Kawartha Lakes Tree Asset </h1>
+       <!-- viewDiv is the element displays the map -->
+        <div id="viewDiv"></div>
+        <p> Testing links </p>
+        <a href="https://survey123.arcgis.com/share/e5fdbce1a0874477b2ae0dee204168e5?portalUrl=https://Fleming.maps.arcgis.com" target="_blank">Make a Request!</a>
 </body>
 </html>
