@@ -6,42 +6,7 @@
     <title>Urban Tree Data Solution - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="Styling.css">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
-    <script src="https://js.arcgis.com/4.28/"></script>
-    <script>
-         require([
-            "esri/config", 
-            "esri/WebMap", 
-            "esri/views/MapView", 
-            "esri/widgets/ScaleBar", 
-            "esri/widgets/Legend"
-        ], function (esriConfig, WebMap, MapView, ScaleBar, Legend) {
-            esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
-
-            const webmap = new WebMap({
-                portalItem: {
-                    id: "3f81264d1525430dba8210cdd9352668" 
-                }
-            });
-
-            const view = new MapView({
-                container: "viewDiv",
-                map: webmap,
-                zoom: 15
-            });
-
-            const scalebar = new ScaleBar({
-                view: view
-            });
-            view.ui.add(scalebar, "bottom-left");
-
-            const legend = new Legend({
-                view: view,
-            });
-            view.ui.add(legend, "bottom-right");
-        });
-    </script>
 </head>
 <body>
     <div class="whole">
@@ -49,8 +14,7 @@
             <a class="active" href="index.html">Home</a>
             <a href="Workflow.html">Workflow</a>
             <a href="Supervisor.html">Supervisor</a>
-			<a href="FieldCrew.html">Field Crew</a>
-            
+            <a href="FieldCrew.html">Field Crew</a>
             <a href="javascript:void(0);" class="icon" onclick="Navbar()" aria-label="Open menu">
                 <i class="fa fa-bars"></i>
             </a>
@@ -77,7 +41,7 @@
         <div class="subhead">
             <h3>Urban Tree of Kawartha Lakes</h3>
             <p>Branch - In and make Kawartha Lakes greener!</p>
-            <div class="scrollimagegallery" id="imageGallery">
+            <div class="scrollimagegallery">
                 <img src="imagegallery/tree1.png" alt="Branch - In and make Kawartha lakes greener!">
                 <img src="imagegallery/tree2.png" alt="Branch - In and make Kawartha lakes greener!">
                 <img src="imagegallery/tree3.png" alt="Branch - In and make Kawartha lakes greener!">
@@ -99,5 +63,8 @@
             <p>TM & Copywrite 2023 Odder Solutions. All Rights Reserved.</p>
         </footer>
     </div>
+    
+    <script src="https://js.arcgis.com/4.28/"></script>
+    <script src="script.js"></script>
 </body>
 </html>
