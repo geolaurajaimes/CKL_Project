@@ -708,3 +708,11 @@ formating that will apply to tablets or smaller
 
   .cartimg {width: 100%; height: auto; float: none; padding: 5px 5px 5px 5px}
 }
+/**********************
+* Owner : Laura Jaimes
+* Date : May 29, 2024
+***********************/
+#viewDiv {
+    height: 500px; /* Ajusta la altura del div del mapa según sea necesario */
+    width: 100%;
+}
