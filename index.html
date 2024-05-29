@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Urban Tree Data Solution for Kawartha Lakes">
+    <meta name="keywords" content="GIS, Trees, Kawartha Lakes, Consultation">
+    <meta name="author" content="Odder Solutions">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kawartha Lakes Tree Assets</title>
+    <title>Urban Tree Data Solution - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Styling.css">
+    <script src="script.js"></script>
     <style>
         html, body {
             padding: 0;
@@ -55,11 +61,89 @@
     </script>
 </head>
 <body>
-    <h1 style="text-align: center">Kawartha Lakes Tree Assets</h1>
-    <div id="viewDiv"></div>
-    <p style="text-align: center">Testing links</p>
-    <p style="text-align: center">
-        <a href="https://survey123.arcgis.com/share/e5fdbce1a0874477b2ae0dee204168e5?portalUrl=https://Fleming.maps.arcgis.com" target="_blank">Make a Request!</a>
-    </p>
+    <div class="whole">
+        <div class="navbar" id="myTopnav">
+            <a class="active" href="index.html">Home</a>
+            <a href="secondpage.html">Workflow</a>
+            <a href="thirdpage.html">Supervisor</a>
+            <div class="dropdown">
+                <button class="dropbtn">Field Crew
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="thirdpage.html">Objectives</a>
+                    <a href="fourthpage.html">Deliverables</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="Navbar()" aria-label="Open menu">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        
+        <div id="heading">
+            <h1>Urban Tree Data Solution</h1>
+            <h2>For the City of Kawartha Lakes</h2>
+        </div>
+        
+        <div class="subhead">
+            <h3>Our Goal</h3>
+            <h4>Client</h4>
+            <img class="logo" src="imagegallery/smallLogo.png" alt="Kawartha Lakes Jump in logo">
+            <p>
+                Formed in 2023, Odder Solutions is now one of the best new and upcoming GIS companies.
+                Our team is comprised of 5 dedicated members: Alanah Reveler, Alison Cooke, Jordan 
+                Steinman, Julie Milne, and Laura Cobham. We specialize in urban tree management to help maintain and enhance the green spaces of Kawartha Lakes.
+            </p>
+            <h4>Overview</h4>
+            <p>
+                At Odder Solutions, we are committed to ensuring the health and vitality of the city's trees. We take on any challenge, leveraging our expertise in GIS to provide innovative solutions for tree management. Our team’s confidence and skills ensure we deliver exceptional results, no matter the complexity.
+            </p>
+            <h4>Study Area</h4>
+            <p>
+                Our rigorous training and diverse skill set enable us to tackle a wide range of tasks related to urban forestry. From spatial analysis and geovisualization to database management and python scripting, we provide comprehensive services to support the city's tree management needs.
+            </p>
+            <p>
+                Fun fact: Our company mascot is an Otter named SQL!
+            </p>
+        </div>
+        
+        <div class="subhead">
+            <h3>Previous Work</h3>
+            <p>Our team has experience in various software tools including ArcGIS Pro, VisualStudioCode, AutoCAD 3D 2024, PCI Catalyst, Microsoft Access, and more!</p>
+            <div class="scrollimagegallery">
+                <img src="imagegallery/LauraGallery2.jpg" alt="Qualitative greyscale map of Burlington, ON made by Laura Cobham">
+                <img src="imagegallery/AlanahGallery2.png" alt="Survey plan from Kawartha Lakes made by Alanah Reveler">
+                <img src="imagegallery/JulieGallery2.jpg" alt="Qualitative colour map of Thunder Bay, ON made by Julie Milne">
+                <img src="imagegallery/AlisonGallery2.jpg" alt="ArcGISPro model built by Alison Cooke">
+                <img src="imagegallery/JordanGallery2.jpg" alt="Quantitative colour map of Cambridge, ON made by Jordan Steinman">
+            </div>
+        </div>
+        
+        <div class="subhead">
+            <h3>Tree Map</h3>
+            <div id="viewDiv"></div>
+        </div>
+        
+        <div class="subhead">
+            <h3>Submit Your Request</h3>
+            <p>We encourage the community to report any tree-related issues to help us maintain the quality of the city's tree management. Your feedback is crucial in ensuring our urban forests remain healthy and vibrant.</p>
+            <p style="text-align: center">
+                <a href="https://survey123.arcgis.com/share/e5fdbce1a0874477b2ae0dee204168e5?portalUrl=https://Fleming.maps.arcgis.com" target="_blank">Make a Request!</a>
+            </p>
+        </div>
+        
+        <div>
+            <button onclick="topFunction()" id="topbutton" class="hide" title="Top">Top</button>
+        </div>
+        
+        <footer>
+            <p>Address: 456 Sesame Street, Hairy Hills AB,T0B 1S0</p>
+            <p>Call us at 867-5309</p>
+            <p>
+                <a class="contactbut" href="./fifthpage.html">Contact us here</a>
+            </p>
+            <p>TM & Copywrite 2023 Odder Solutions. All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
