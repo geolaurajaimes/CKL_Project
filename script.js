@@ -50,3 +50,36 @@ function submitalert() {
   alert("Your message has been submitted!");
 }
 //Owner End: Jordan Steinman
+
+// Owner: Laura Jaimes
+require([
+    "esri/config", 
+    "esri/WebMap", 
+    "esri/views/MapView", 
+    "esri/widgets/ScaleBar", 
+    "esri/widgets/Legend"
+], function (esriConfig, WebMap, MapView, ScaleBar, Legend) {
+    esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
+
+    const webmap = new WebMap({
+        portalItem: {
+            id: "3f81264d1525430dba8210cdd9352668" 
+        }
+    });
+
+    const view = new MapView({
+        container: "viewDiv",
+        map: webmap,
+        zoom: 15
+    });
+
+    const scalebar = new ScaleBar({
+        view: view
+    });
+    view.ui.add(scalebar, "bottom-left");
+
+    const legend = new Legend({
+        view: view,
+    });
+    view.ui.add(legend, "bottom-right");
+});
