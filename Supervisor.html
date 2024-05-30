@@ -1,144 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tree Request Summary</title>
-  <style>
-    /* Hi Al this is simple styles to enhance appearance - change it as you wish */
-    body {
-      font-family: Century Gothic;
-      margin: 20px;
-    }
-    .container {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 20px;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    .label {
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Tree Data Solution - Supervisor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Styling.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Tree Request Summary</h2>
-    <div class="field">
-      <label for="requestID">Select Request ID:</label>
-      <select id="requestID" onchange="loadRequest(this.value)">
-        <!-- Options will be added dynamically using JavaScript -->
-      </select>
-    </div>
-    <div class="field">
-      <span class="label">Tree Location:</span>
-      <span id="treeLocation">[TreeLocation]</span>
-    </div>
-    <div class="field">
-      <span class="label">Note:</span>
-      <span id="note">[Note]</span>
-    </div>
-    <div class="field">
-      <span class="label">Request Image:</span><br>
-      <img id="requestImage" src="[Request_image]" alt="Request Image" style="max-width: 100%; height: auto;">
-    </div>
-    <h3>Contact Information</h3>
-    <div class="field">
-      <span class="label">Name:</span>
-      <span id="name">[Name]</span>
-    </div>
-    <div class="field">
-      <span class="label">Phone:</span>
-      <span id="phone">[Phone]</span>
-    </div>
-    <div class="field">
-      <span class="label">Email:</span>
-      <span id="email">[Email]</span>
-    </div>
-  </div>
-
-  <script>
-    // Function to load request data based on selected Request ID that is not the url it should be your map
-    function loadRequest(requestID) {
-      // ArcGIS API for JavaScript
-      require([
-        "esri/request",
-        "dojo/dom",
-        "dojo/domReady!"
-      ], function(esriRequest, dom) {
-        // URL of the Feature Layer service
-        var serviceUrl = "https://fleming.maps.arcgis.com/home/item.html?id=47cbeb415569456f9e348b3c95b80ad2&sublayer=0";
+    <div class="whole">
+        <div class="navbar" id="myTopnav">
+            <a href="index.html">Home</a>
+            <a href="Workflow.html">Workflow</a>
+            <a class="active" href="Supervisor.html">Supervisor</a>
+            <a href="FieldCrew.html">Field Crew</a>
+            <a href="javascript:void(0);" class="icon" onclick="Navbar()" aria-label="Open menu">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
         
-		// Construct query to fetch data based on Request ID
-        var query = {
-          where: "RequestID = '" + requestID + "'",
-          outFields: "*",
-          returnGeometry: false,
-          f: "json"
-        };
-        // Send request to the service
-        esriRequest(serviceUrl + "/query", {
-          query: query,
-          responseType: "json"
-        }).then(function(response) {
-          // Update HTML elements with fetched data
-          var attributes = response.data.features[0].attributes;
-          document.getElementById("treeLocation").textContent = attributes.TreeLocation;
-          document.getElementById("note").textContent = attributes.Note;
-          document.getElementById("requestImage").src = attributes.Request_image;
-          document.getElementById("name").textContent = attributes.Name;
-          document.getElementById("phone").textContent = attributes.Phone;
-          document.getElementById("email").textContent = attributes.Email;
-        }).otherwise(function(error) {
-          console.error("Error fetching request data: ", error);
-        });
-      });
-    }
-
-    // Function to populate dropdown with Request IDs
-    function populateDropdown() {
-      // ArcGIS API for JavaScript
-      require([
-        "esri/request",
-        "dojo/dom",
-        "dojo/domReady!"
-      ], function(esriRequest, dom) {
-        // URL of the Feature Layer service ALISON 
-        var serviceUrl = "https://fleming.maps.arcgis.com/home/item.html?id=47cbeb415569456f9e348b3c95b80ad2&sublayer=0";
-        // query to fetch Request IDs
-        var query = {
-          where: "1=1",
-          outFields: "RequestID",
-          returnGeometry: false,
-          f: "json"
-        };
-        // Send request to the service
-        esriRequest(serviceUrl + "/query", {
-          query: query,
-          responseType: "json"
-        }).then(function(response) {
-          // Populate dropdown with Request IDs
-          var features = response.data.features;
-          var dropdown = document.getElementById("requestID");
-          features.forEach(function(feature) {
-            var option = document.createElement("option");
-            option.text = feature.attributes.RequestID;
-            option.value = feature.attributes.RequestID;
-            dropdown.add(option);
-          });
-          // Load data for the first Request ID by default
-          if (features.length > 0) {
-            loadRequest(features[0].attributes.RequestID);
-          }
-        }).otherwise(function(error) {
-          console.error("Error fetching Request IDs: ", error);
-        });
-      });
-    }
-
-    // Call function to populate dropdown when the page loads
-    populateDropdown();
-  </script>
+        <div id="heading">
+            <h1>Urban Tree Data Solution</h1>
+            <h2>For the City of Kawartha Lakes</h2>
+        </div>
+        
+        <div class="subhead">
+            <h3>Supervisor Portal</h3>
+            <p>The supervisor oversees the validation of requests. The supervisor will receive a list of all the requests from the previous day in a .csv file, which they can review on the <a href="http://websiteSupervisor.com" target="_blank">supervisor website</a>. They will determine whether to process or decline each request.</p>
+            <div style="text-align:center;">
+                <iframe width="600" height="450" src="https://fieldmaps.arcgis.app/?itemID=d4998941c5c645d09873b604682474e3&referenceContext=open&portalURL=https%3A%2F%2FFleming.maps.arcgis.com" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <div>
+            <button onclick="topFunction()" id="topbutton" class="hide" title="Top">Top</button>
+        </div>
+        
+        <footer>
+            <p>Address: 456 Sesame Street, Hairy Hills AB,T0B 1S0</p>
+            <p>Call us at 867-5309</p>
+            <p>
+                <a class="contactbut" href="./fifthpage.html">Contact us here</a>
+            </p>
+            <p>TM & Copywrite 2023 Odder Solutions. All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="https://js.arcgis.com/4.28/"></script>
+    <script src="script.js"></script>
 </body>
 </html>
