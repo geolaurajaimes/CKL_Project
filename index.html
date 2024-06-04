@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Tree Data Solution - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="Styling.css">
-    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+    <title>Home - Laura Jaimes</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="whole">
-        <div class="navbar" id="myTopnav">
-            <a class="active" href="index.html">Home</a>
-            <a href="Workflow.html">Workflow</a>
-            <a href="Supervisor.html">Supervisor</a>
-            <a href="FieldCrew.html">Field Crew</a>
-            <a href="javascript:void(0);" class="icon" onclick="Navbar()" aria-label="Open menu">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-        
-        <div id="heading">
-            <h1>Urban Tree Data Solution</h1>
-            <h2>For the City of Kawartha Lakes</h2>
-        </div>
-        
-        <div class="subhead">
-            <h3>Tree Viewer</h3>
-            <div id="viewDiv"></div>
-        </div>
-        
-        <div class="subhead">
-            <h3>Submit Your Request</h3>
-            <p>We encourage the community to report any tree-related issues to help us maintain the quality of the city's tree management. Your feedback is crucial in ensuring our urban forests remain healthy and vibrant.</p>
-            <p style="text-align: center">
-                <a href="https://survey123.arcgis.com/share/e5fdbce1a0874477b2ae0dee204168e5?portalUrl=https://Fleming.maps.arcgis.com" target="_blank">Make a Request!</a>
-            </p>
-        </div>
-
-        <div class="subhead">
-            <h3>Urban Tree of Kawartha Lakes</h3>
-            <p>Branch - In and make Kawartha Lakes greener!</p>
-            <div class="scrollimagegallery">
-                <img src="imagegallery/tree1.png" alt="Branch - In and make Kawartha lakes greener!">
-                <img src="imagegallery/tree2.png" alt="Branch - In and make Kawartha lakes greener!">
-                <img src="imagegallery/tree3.png" alt="Branch - In and make Kawartha lakes greener!">
-                <img src="imagegallery/tree4.png" alt="Branch - In and make Kawartha lakes greener!">
-                <img src="imagegallery/tree5.png" alt="Branch - In and make Kawartha lakes greener!">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about-me">
+            <div class="content">
+                <div class="text">
+                    <h1>About Me</h1>
+                    <p>
+                        I am a geologist with a focus on assertive communication, critical thinking, and adaptability.
+                        My specialization lies in geological, engineering geological, and geomorphological mapping,
+                        along with practical applications of GIS technology. I have a proven proficiency in identifying
+                        and characterizing natural hazards such as floods, flash floods, and landslides and assessing their
+                        impact on the population.
+                    </p>
+                    <p>
+                        You can learn more about my professional journey as a seasoned geologist and GIS specialist by
+                        visiting my LinkedIn profile. Additionally, I invite you to explore my skills and background section
+                        to understand better my passion for geosciences and GIS applied to significant projects in various
+                        regions of Colombia.
+                    </p>
+                    <p>
+                        I completed my geology degree at the Industrial University of Santander (Colombia) and have a robust
+                        background in GIS, which is strengthening with my current formation as a GIS Specialist at Fleming College.
+                    </p>
+                    <p>
+                        Over the years, I've been involved in a range of investigation projects, including engineering geological
+                        and geomorphological mapping, landslide susceptibility zonation, flood and flash flood hazard zonation,
+                        urban cadaster planning, and environmental consulting for both public and private sectors. I am also
+                        eligible to become a GIT.
+                    </p>
+                    <a href="https://www.linkedin.com/in/geologistgislaurajaimes/" target="_blank" class="linkedin-button">Connect with me on LinkedIn</a>
+                </div>
+                <div class="image">
+                    <img src="img/lau1.jpg" alt="Laura Jaimes">
+                </div>
             </div>
-        </div>
-        
-        <div>
-            <button onclick="topFunction()" id="topbutton" class="hide" title="Top">Top</button>
-        </div>
-        
-        <footer>
-            <p>Address: 456 Sesame Street, Hairy Hills AB,T0B 1S0</p>
-            <p>Call us at 867-5309</p>
-            <p>
-                <a class="contactbut" href="./fifthpage.html">Contact us here</a>
-            </p>
-            <p>TM & Copywrite 2023 Odder Solutions. All Rights Reserved.</p>
-        </footer>
-    </div>
-    
-    <script src="https://js.arcgis.com/4.28/"></script>
-    <script src="script.js"></script>
-</body>
+        </section>
+    </main>
+    <script src="js/script.js"></scri
+    </body>
 </html>
